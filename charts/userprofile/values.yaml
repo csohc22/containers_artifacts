@@ -42,10 +42,10 @@ service:
 
 probes:
   livenessProbe:
-    path: /api/trips/healthcheck
+    path: /api/user/healthcheck
     port: http
   readinessProbe:
-    path: /api/trips/healthcheck
+    path: /api/user/healthcheck
     port: http
 
 ingress:
