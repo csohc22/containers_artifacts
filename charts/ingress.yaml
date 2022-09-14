@@ -11,15 +11,8 @@ spec:
   rules:
   - http:
       paths:
-      - path: /*
-        pathType: Prefix   
-        backend:
-          service:
-            name: tripviewer
-            port:
-              number: 80
       - path: /api/user-java/healthcheck
-        pathType: Prefix
+        pathType: Prefix   
         backend:
           service:
             name: user-java
