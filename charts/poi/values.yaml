@@ -5,14 +5,14 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: registryfhd4755.azurecr.io/tripinsights/poi
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "1.0"
 
 imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
+nameOverride: "tripinsights-poi"
+fullnameOverride: "tripinsights-poi-chart"
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -39,6 +39,14 @@ securityContext: {}
 service:
   type: ClusterIP
   port: 80
+
+probes:
+  livenessProbe:
+    path: /api/poi/healthcheck
+    port: http
+  readinessProbe:
+    path: /api/poi/healthcheck
+    port: http
 
 ingress:
   enabled: false
@@ -80,3 +88,11 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+env:
+  normal:
+    SQL_SERVER: 'localhost'
+    SQL_USER: SA
+    WEB_SERVER_BASE_URI: ''
+  secret:
+    SQL_PASSWORD: 'password'
