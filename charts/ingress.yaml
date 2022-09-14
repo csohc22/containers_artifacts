@@ -11,10 +11,10 @@ spec:
   rules:
   - http:
       paths:
-      - path: /api/user-java/healthcheck
+      - path: /api/trips/healthcheck
         pathType: Prefix   
         backend:
           service:
-            name: user-java
+            name: trips
             port:
               number: 80
