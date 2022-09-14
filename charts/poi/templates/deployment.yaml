@@ -53,6 +53,13 @@ spec:
               port: "{{ .Values.probes.readinessProbe.port }}"
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          env:
+            {{- with .Values.env }}
+            {{- range $k, $v := . }}
+              - name: {{ quote $k }}
+                value: {{ quote $v }}
+            {{- end }}
+            {{- end }}
           volumeMounts:
             - name: secrets-store
               mountPath: /mnt/secrets-store

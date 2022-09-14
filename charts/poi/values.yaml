@@ -90,9 +90,5 @@ tolerations: []
 affinity: {}
 
 env:
-  normal:
-    SQL_SERVER: 'localhost'
-    SQL_USER: SA
-    WEB_SERVER_BASE_URI: ''
-  secret:
-    SQL_PASSWORD: 'password'
+  SQL_SERVER: 'sqlserverfhd4755.database.windows.net'
+  SQL_USER: 'sqladminfHd4755'
