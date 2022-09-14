@@ -5,7 +5,7 @@
 replicaCount: 3
 
 image:
-  repository: registryfhd4755.azurecr.io/tripinsights/trips:1.0
+  repository: registryfhd4755.azurecr.io/tripinsights/trips
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
