@@ -48,17 +48,21 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
-            {{- with .Values.env }}
+            {{- with .Values.env.variables }}
             {{- range $k, $v := . }}
             - name: {{ quote $k }}
               value: {{ quote $v }}
             {{- end }}
-            {{- end }}          
-            - name: SQL_PASSWORD
+            {{- end }}
+            {{- with .Values.env.secrets }}
+            {{- range $k, $v := . }}
+            - name: {{ quote $k }}
               valueFrom:
                 secretKeyRef:
                   name: keyvault
-                  key: sqlpassword
+                  key: {{ quote $v }}
+            {{- end }}
+            {{- end }}
           volumeMounts:
             - name: secrets-store
               mountPath: /mnt/secrets-store

@@ -90,5 +90,8 @@ tolerations: []
 affinity: {}
 
 env:
-  SQL_SERVER: sqlserverfhd4755.database.windows.net
-  SQL_USER: sqladminfHd4755
+  variables:
+    SQL_SERVER: sqlserverfhd4755.database.windows.net
+    SQL_USER: sqladminfHd4755
+  secrets:
+    SQL_PASSWORD: sqlpassword
