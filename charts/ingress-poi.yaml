@@ -15,6 +15,6 @@ spec:
         pathType: Prefix   
         backend:
           service:
-            name: poi
+            name: tripinsights-poi-chart
             port:
               number: 80
