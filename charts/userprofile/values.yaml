@@ -92,5 +92,5 @@ affinity: {}
 env:
   SQL_SERVER: sqlserverfhd4755.database.windows.net
   SQL_USER: sqladminfHd4755
-  WEB_SERVER_BASE_URI: ''
+#  WEB_SERVER_BASE_URI: ''
   SQL_PASSWORD: Q3J6gxS8RpEJ4@7n
