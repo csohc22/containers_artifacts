@@ -83,3 +83,4 @@ affinity: {}
 
 env:
   USERPROFILE_API_ENDPOINT: 'neco'
+  TRIPS_API_ENDPOINT: ''
