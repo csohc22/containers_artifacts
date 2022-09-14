@@ -11,7 +11,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /api/trip/*
+      - path: /api/trips/*
         pathType: Prefix   
         backend:
           service:
