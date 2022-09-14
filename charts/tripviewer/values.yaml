@@ -82,6 +82,6 @@ tolerations: []
 affinity: {}
 
 env:
-  USERPROFILE_API_ENDPOINT: 'http://10.244.0.47'
-  TRIPS_API_ENDPOINT: 'http://10.244.0.31'
+  USERPROFILE_API_ENDPOINT: 'http://userprofile'
+  TRIPS_API_ENDPOINT: 'http://trips'
   ASPNETCORE_ENVIRONMENT: Development
