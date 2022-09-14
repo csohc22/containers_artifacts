@@ -40,6 +40,14 @@ service:
   type: ClusterIP
   port: 80
 
+probes:
+  livenessProbe:
+    path: /api/trips/healthcheck
+    port: http
+  readinessProbe:
+    path: /api/trips/healthcheck
+    port: http
+
 ingress:
   enabled: false
   className: ""
@@ -80,3 +88,11 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+env:
+  normal:
+    SQL_SERVER: 'localhost'
+    SQL_USER: SA
+    WEB_SERVER_BASE_URI: ''
+  secret:
+    SQL_PASSWORD: 'password'
