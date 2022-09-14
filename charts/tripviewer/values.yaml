@@ -82,5 +82,5 @@ tolerations: []
 affinity: {}
 
 env:
-  USERPROFILE_API_ENDPOINT: 'neco'
+  USERPROFILE_API_ENDPOINT: 'user-profile'
   TRIPS_API_ENDPOINT: 'trips'
