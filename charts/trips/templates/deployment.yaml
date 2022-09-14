@@ -50,10 +50,10 @@ spec:
           env:
             {{- with .Values.env }}
             {{- range $k, $v := . }}
-              - name: {{ quote $k }}
-                value: {{ quote $v }}
+            - name: {{ quote $k }}
+              value: {{ quote $v }}
             {{- end }}
-            {{- end }}
+            {{- end }}          
             - name: SQL_PASSWORD
               valueFrom:
                 secretKeyRef:
