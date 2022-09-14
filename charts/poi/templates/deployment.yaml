@@ -54,6 +54,7 @@ spec:
               value: {{ quote $v }}
             {{- end }}
             {{- end }}
+          env:
             - name: SQL_PASSWORD
               valueFrom:
                 secretKeyRef:
