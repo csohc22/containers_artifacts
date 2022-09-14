@@ -47,7 +47,7 @@ spec:
               port: "{{ .Values.probes.livenessProbe.port }}"
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-                    env:
+          env:
             {{- with .Values.env }}
             {{- range $k, $v := . }}
               - name: {{ quote $k }}
