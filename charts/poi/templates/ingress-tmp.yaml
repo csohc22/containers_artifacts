@@ -4,14 +4,13 @@ metadata:
   name: poi-ingress
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    #nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /api/poi/healthcheck
+    nginx.ingress.kubernetes.io/rewrite-target: /api/poi/$2
 spec:
   ingressClassName: nginx
   rules:
   - http:
       paths:
-      - path: /api/poi/healthcheck
+      - path: /api/poi(/|$)(.*)
         pathType: Prefix
         backend:
           service:

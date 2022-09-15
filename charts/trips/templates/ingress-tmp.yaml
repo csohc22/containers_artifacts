@@ -4,15 +4,14 @@ metadata:
   name: trips-ingress
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    #nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /api/trips/healthcheck
+    nginx.ingress.kubernetes.io/rewrite-target: /api/trips/$2
 spec:
   ingressClassName: nginx
   rules:
   - http:
       paths:
-      - path: /api/trips/healthcheck
-        pathType: Prefix   
+      - path: /api/trips(/|$)(.*)
+        pathType: Prefix
         backend:
           service:
             name: trips

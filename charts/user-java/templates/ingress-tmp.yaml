@@ -4,15 +4,14 @@ metadata:
   name: user-java-ingress
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    #nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /api/user-java/healthcheck
+    nginx.ingress.kubernetes.io/rewrite-target: /api/user-java/$2
 spec:
   ingressClassName: nginx
   rules:
   - http:
       paths:
-      - path: /api/user-java/healthcheck
-        pathType: Prefix   
+      - path: /api/user-java(/|$)(.*)
+        pathType: Prefix
         backend:
           service:
             name: user-java

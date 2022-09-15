@@ -4,15 +4,14 @@ metadata:
   name: userprofile-ingress
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    #nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /api/user/healthcheck
+    nginx.ingress.kubernetes.io/rewrite-target: /api/user/$2
 spec:
   ingressClassName: nginx
   rules:
   - http:
       paths:
-      - path: /api/user/healthcheck
-        pathType: Prefix   
+      - path: /api/user(/|$)(.*)
+        pathType: Prefix
         backend:
           service:
             name: userprofile
