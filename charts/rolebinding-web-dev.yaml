@@ -10,4 +10,5 @@ roleRef:
   name: web-dev
 subjects:
 - kind: Group
+  namespace: web
   name: 9fc2a936-d6fe-49e2-969c-5a39edb1d16b
