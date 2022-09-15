@@ -10,5 +10,5 @@ roleRef:
   name: dev-user-full-access
 subjects:
 - kind: Group
-  namespace: dev
+  namespace: app
   name: 9fc2a936-d6fe-49e2-969c-5a39edb1d16b
