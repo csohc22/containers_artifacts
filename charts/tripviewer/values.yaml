@@ -83,5 +83,5 @@ affinity: {}
 
 env:
   USERPROFILE_API_ENDPOINT: 'http://userprofile'
-  TRIPS_API_ENDPOINT: 'http://trips.api'
+  TRIPS_API_ENDPOINT: 'http://trips.api.svc.cluster.local'
   ASPNETCORE_ENVIRONMENT: Development
