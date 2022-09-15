@@ -53,16 +53,7 @@ spec:
             - name: {{ quote $k }}
               value: {{ quote $v }}
             {{- end }}
-            {{- end }}
-            {{- with .Values.env.secrets }}
-            {{- range $k, $v := . }}
-            - name: {{ quote $k }}
-              valueFrom:
-                secretKeyRef:
-                  name: keyvault
-                  key: {{ quote $v }}
-            {{- end }}
-            {{- end }}
+            {{- end }}            
           volumeMounts:
             - name: secrets-store
               mountPath: /mnt/secrets-store
