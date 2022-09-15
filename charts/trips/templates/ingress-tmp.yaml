@@ -5,13 +5,13 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     #nginx.ingress.kubernetes.io/use-regex: "true"
-    #nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/rewrite-target: /api/trips/healthcheck
 spec:
   ingressClassName: nginx
   rules:
   - http:
       paths:
-      - path: /
+      - path: /api/trips/healthcheck
         pathType: Prefix   
         backend:
           service:
