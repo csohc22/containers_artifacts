@@ -11,8 +11,8 @@ image:
   tag: "1.0"
 
 imagePullSecrets: []
-nameOverride: "tripinsights-poi"
-fullnameOverride: "tripinsights-poi-chart"
+nameOverride: "poi"
+fullnameOverride: ""
 
 serviceAccount:
   # Specifies whether a service account should be created

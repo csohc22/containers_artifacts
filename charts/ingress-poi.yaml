@@ -12,9 +12,9 @@ spec:
   - http:
       paths:
       - path: /api/poi/healthcheck
-        pathType: Prefix   
+        pathType: Prefix
         backend:
           service:
-            name: tripinsights-poi-chart
+            name: poi
             port:
               number: 80
