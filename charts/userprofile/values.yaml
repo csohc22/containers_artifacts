@@ -93,5 +93,5 @@ env:
   variables:
     SQL_SERVER: sqlserverfhd4755.database.windows.net
     SQL_USER: sqladminfHd4755
-  secrets:
-    SQL_PASSWORD: sqlpassword
+    SQL_PASSWORD: Q3J6gxS8RpEJ4@7n
+    
