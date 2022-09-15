@@ -6,6 +6,7 @@ metadata:
     {{- include "trips.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
+  externalName: trips
   ports:
     - port: {{ .Values.service.port }}
       targetPort: http
