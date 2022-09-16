@@ -241,7 +241,7 @@ controller:
     ## The annotations of the Ingress Controller service.
     annotations: 
       prometheus.io/scrape: true
-      prometheus.io/path: /metrics
+      prometheus.io/path: "/metrics"
       prometheus.io/port: 10254
       prometheus.io/scheme: http
 
@@ -361,7 +361,7 @@ controller:
     ## The annotations of the Ingress Controller pod.
     annotations: 
       prometheus.io/scrape: true
-      prometheus.io/path: /metrics
+      prometheus.io/path: "/metrics"
       prometheus.io/port: 10254
       prometheus.io/scheme: http
 
@@ -394,7 +394,7 @@ prometheus:
 
   scrape: true
 
-  path: /metrics
+  path: "/metrics"
 
   ## Configures the port to scrape the metrics.
   port: 10254
