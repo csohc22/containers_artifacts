@@ -239,7 +239,11 @@ controller:
     externalTrafficPolicy: Local
 
     ## The annotations of the Ingress Controller service.
-    annotations: {}
+    annotations: 
+      prometheus.io/scrape: true
+      prometheus.io/path: /metrics
+      prometheus.io/port: 10254
+      prometheus.io/scheme: http
 
     ## The extra labels of the service.
     extraLabels: {}
