@@ -1,18 +1,18 @@
-# Default values for user-java.
+# Default values for wcfservice.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: registryfhd4755.azurecr.io/tripinsights/user-java
+  repository: registryfhd4755.azurecr.io/wcfservice
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "1.0"
 
 imagePullSecrets: []
-nameOverride: "user-java"
-fullnameOverride: "user-java"
+nameOverride: "wcfservice"
+fullnameOverride: ""
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -21,7 +21,7 @@ serviceAccount:
   annotations: {}
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
-  name: "user-java"
+  name: ""
 
 podAnnotations: {}
 
@@ -40,13 +40,13 @@ service:
   type: ClusterIP
   port: 80
 
-probes:
-  livenessProbe:
-    path: /api/user-java/healthcheck
-    port: http
-  readinessProbe:
-    path: /api/user-java/healthcheck
-    port: http
+#probes:
+#  livenessProbe:
+#    path: /api/wcfservice/healthcheck
+#    port: http
+#  readinessProbe:
+#    path: /api/wcfservice/healthcheck
+#    port: http
 
 ingress:
   enabled: false
@@ -84,7 +84,7 @@ autoscaling:
   # targetMemoryUtilizationPercentage: 80
 
 nodeSelector:
-  kubernetes.io/os: linux
+  kubernetes.io/os: windows
 
 tolerations: []
 
@@ -92,7 +92,7 @@ affinity: {}
 
 env:
   variables:
-    SQL_SERVER: sqlserverfhd4755.database.windows.net
-    SQL_USER: sqladminfHd4755
-    SQL_PASSWORD: Q3J6gxS8RpEJ4@7n
-    
+#    SQL_SERVER: sqlserverfhd4755.database.windows.net
+#    SQL_USER: sqladminfHd4755
+#  secrets:
+#    SQL_PASSWORD: sqlpassword
