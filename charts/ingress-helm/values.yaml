@@ -355,7 +355,11 @@ controller:
 
   pod:
     ## The annotations of the Ingress Controller pod.
-    annotations: {}
+    annotations: 
+      prometheus.io/scrape: true
+      prometheus.io/path: /metrics
+      prometheus.io/port: 10254
+      prometheus.io/scheme: http
 
     ## The additional extra labels of the Ingress Controller pod.
     extraLabels: {}
