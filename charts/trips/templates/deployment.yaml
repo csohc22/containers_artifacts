@@ -53,27 +53,7 @@ spec:
             - name: {{ quote $k }}
               value: {{ quote $v }}
             {{- end }}
-            {{- end }}
-            {{- with .Values.env.secrets }}
-            {{- range $k, $v := . }}
-            - name: {{ quote $k }}
-              valueFrom:
-                secretKeyRef:
-                  name: keyvault
-                  key: {{ quote $v }}
-            {{- end }}
-            {{- end }}
-          volumeMounts:
-            - name: secrets-store
-              mountPath: /mnt/secrets-store
-              readOnly: true
-      volumes:
-        - name: secrets-store
-          csi:
-            driver: secrets-store.csi.k8s.io
-            readOnly: true
-            volumeAttributes:
-              secretProviderClass: azure-kv-{{ .Chart.Name }}-csi
+            {{- end }}            
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
