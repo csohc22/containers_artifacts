@@ -83,7 +83,8 @@ autoscaling:
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 
-nodeSelector: {}
+nodeSelector:
+  kubernetes.io/os: linux
 
 tolerations: []
 
@@ -93,5 +94,5 @@ env:
   variables:
     SQL_SERVER: sqlserverfhd4755.database.windows.net
     SQL_USER: sqladminfHd4755
-  secrets:
-    SQL_PASSWORD: sqlpassword
+    SQL_PASSWORD: Q3J6gxS8RpEJ4@7n
+    
